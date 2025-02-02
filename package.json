@@ -1,0 +1,17 @@
+{
+  "name": "poc-sse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspaces foreach --all --parallel run dev",
+    "dev:backend": "yarn workspace backend dev",
+    "dev:react": "yarn workspace react dev",
+    "build": "yarn workspaces foreach --all --parallel run build"
+  },
+  "packageManager": "yarn@4.1.1"
+}
