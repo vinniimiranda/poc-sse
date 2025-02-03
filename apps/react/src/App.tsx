@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="container mx-auto p-4">
-      <h3 className="text-2xl font-bold mb-4">SSE with React</h3>
+      <h3 className="text-2xl font-bold mb-4">Server Sent Events with React</h3>
       <div className="space-y-4">
         {notifications.map((notification) => (
           <Notification

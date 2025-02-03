@@ -11,8 +11,8 @@ export function useNotifications() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   useEffect(() => {
-    const eventSource = new EventSource('http://localhost:3333/notifications-stream');
-
+    const eventSource = new EventSource('http://localhost:3333/notifications-stream?clientId=react', {});
+    eventSource.addEventListener('message', () => {});
     eventSource.onmessage = (event) => {
       const data = JSON.parse(event.data);
       setNotifications(data);

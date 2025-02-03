@@ -7,7 +7,7 @@ const notifications = ref([]);
 let eventSource;
 
 onMounted(() => {
-  eventSource = new EventSource('http://localhost:3333/notifications-stream');
+  eventSource = new EventSource('http://localhost:3333/notifications-stream?clientId=vue');
   
   eventSource.onmessage = (event) => {
     notifications.value = JSON.parse(event.data);
@@ -23,7 +23,7 @@ onUnmounted(() => {
 
 <template>
   <div class="container mx-auto p-4">
-    <h3 class="text-2xl font-bold mb-4">SSE with Vue</h3>
+    <h3 class="text-2xl font-bold mb-4">Server Sent Events with Vue</h3>
     <div class="space-y-4">
       <div
         v-for="notification in notifications"
